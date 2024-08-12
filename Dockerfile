@@ -39,6 +39,9 @@ WORKDIR /app
 # Copy application files
 COPY . /app
 
+# Update Composer dependencies
+RUN composer update --no-interaction --prefer-dist
+
 # Install PHP dependencies
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader || { \
     echo "Composer install failed. Attempting to diagnose..."; \
