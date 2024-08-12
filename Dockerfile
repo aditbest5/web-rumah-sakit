@@ -3,6 +3,7 @@ FROM ubuntu:20.04
 
 # Set ENV untuk non-interaktif frontend
 ENV DEBIAN_FRONTEND=noninteractive
+ENV COMPOSER_ALLOW_SUPERUSER=1
 
 # Update dan instal dependensi
 RUN apt-get update && apt-get install -y \
