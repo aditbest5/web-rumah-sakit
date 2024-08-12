@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                     // Membangun image Docker
-                    sh 'docker build -t aditbest5/rumah-sakit.'
+                    sh 'docker build -t aditbest5/rumah-sakit .'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
                     sh 'docker container rm rumah-sakit-container || true'
 
                     // Menjalankan container baru dalam mode detached (-d)
-                    sh 'docker run -d --name rumah-sakit-container -p 3000:3000 aditbest5/rumah-sakit'
+                    sh 'docker run -d --name rumah-sakit-container -p 3000:3000 aditbest5/rumah-sakit &'
                 }
             }
         }
